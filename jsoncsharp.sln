@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.29728.190
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonCsharp", "src\JsonCsharp.csproj", "{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonCsharp.Tests", "tests\JsonCsharp.Tests\JsonCsharp.Tests.csproj", "{A3DC2620-5A79-4044-92BA-35019BA1727E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {E5818FFB-E780-47D7-8556-F093819ADC1C}
+	EndGlobalSection
+EndGlobal

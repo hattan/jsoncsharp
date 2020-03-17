@@ -15,13 +15,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="NJsonSchema" Version="10.1.8" />
-    <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" Version="10.1.8" />
-    <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20158.1" />
+    <Compile Remove="nupkg\**" />
+    <EmbeddedResource Remove="nupkg\**" />
+    <None Remove="nupkg\**" />
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="nupkg\" />
+    <PackageReference Include="NJsonSchema" Version="10.1.8" />
+    <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" Version="10.1.8" />
+    <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20158.1" />
   </ItemGroup>
 
 </Project>
