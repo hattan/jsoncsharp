@@ -51,7 +51,7 @@ namespace jsoncsharp
         /// <param name="force">Ignore checking for existence of output file.</param>
         /// <param name="verbose">Show verbose logs.</param>
         static async Task Main(
-            string input="", 
+            string input=null, 
             string output=null,
             string @namespace="DefaultNameSpace",
             bool force = false,
