@@ -2,7 +2,6 @@
 
   <PropertyGroup>
     <OutputType>Exe</OutputType>
-    <Version>1.0.0.7</Version>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <RootNamespace>jsoncsharp</RootNamespace>
     <PackAsTool>true</PackAsTool>
@@ -11,7 +10,7 @@
     <RepositoryUrl>https://github.com/hattan/jsoncsharp</RepositoryUrl>
     <Authors>Hattan Shobokshi</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
-    <Description>A command line tool to genreate C# classes from json files. These can be example json documents or json schema.</Description>
+    <Description>A command line tool to genreate C# classes from json files. These can be example json documents or json schema. In addition, you can also generate a schema from a example json file.</Description>
     <Icon>.\src\jsoncsharp.png</Icon>
     <IconUrl>https://i.imgur.com/ayzlCvK.png</IconUrl>
   </PropertyGroup>
