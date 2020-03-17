@@ -5,7 +5,7 @@ VisualStudioVersion = 16.0.29728.190
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonCsharp", "src\JsonCsharp.csproj", "{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "JsonCsharp.Tests", "tests\JsonCsharp.Tests\JsonCsharp.Tests.csproj", "{A3DC2620-5A79-4044-92BA-35019BA1727E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "JsonCsharp.Tests", "tests\JsonCsharp.Tests.csproj", "{8522514F-289C-435D-B9EC-EF9EE07E6B6E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -17,10 +17,10 @@ Global
 		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{4C0EE5C3-D50E-4AB6-978B-C14401D413AB}.Release|Any CPU.Build.0 = Release|Any CPU
-		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{A3DC2620-5A79-4044-92BA-35019BA1727E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8522514F-289C-435D-B9EC-EF9EE07E6B6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8522514F-289C-435D-B9EC-EF9EE07E6B6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8522514F-289C-435D-B9EC-EF9EE07E6B6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8522514F-289C-435D-B9EC-EF9EE07E6B6E}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

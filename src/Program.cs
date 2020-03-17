@@ -48,13 +48,15 @@ namespace jsoncsharp
         /// <param name="input">Json document path.</param>
         /// <param name="output">C# file path. (default is {json filename}.cs </param>
         /// <param name="namespace">C# namespace. (default is DefaultNameSpace)</param>
-        /// <param name="force">Ignore checking for existence of output file.</param>
-        /// <param name="verbose">Show verbose logs.</param>
+        /// <param name="force">Ignore checking for existence of output file. (default is false.)</param>
+        /// <param name="schema">Generate a json schema in addition to C# classes. (default is false.)</param>
+        /// <param name="verbose">Show verbose logs. (default is false.)</param>
         static async Task Main(
             string input= null, 
             string output=null,
             string @namespace="DefaultNameSpace",
             bool force = false,
+            bool schema = false,
             bool verbose = false)
         {
             var watch = Stopwatch.StartNew();
@@ -62,22 +64,34 @@ namespace jsoncsharp
             Write("***************** Starting C# Generation from JSON *****************", true);
             
             input = VerifyInputFile(input, verbose);
-            string file = await GenerateFileContentFromSchema(input, @namespace);
+            var result = await GenerateFileContentFromSchema(input, @namespace);
 
             output = VerifyOutputFile(output, force, verbose, input);
-            WriteContentToFile(output, file);
+            WriteContentToFile(output, result.csharpfile);
+            string schemaFileName = null;
+            if (schema)
+            {
+                schemaFileName = $"{Path.GetFileNameWithoutExtension(input)}.schema.json";
+                WriteContentToFile(schemaFileName, result.jsonschema);
+            }
 
             watch.Stop();
 
-            PrintCompletion(output, watch);
+            PrintCompletion(output, watch, schemaFileName);
         }
 
-        private static void PrintCompletion(string output, Stopwatch watch)
+        private static void PrintCompletion(string output, Stopwatch watch, string schemaFileName)
         {
             decimal elapsedMs = watch.ElapsedMilliseconds;
             decimal roundedTime = decimal.Round(elapsedMs / 1000, 3);
-
-            Success($"Generation Completed!\nCreated: {Path.GetFullPath(output)} \nTotal Time (seconds):{roundedTime}");
+            string message = $"Generation Completed!\nCreated: {Path.GetFullPath(output)} ";
+            if (schemaFileName != null)
+            {
+                message = $"{message}\nCreated: {Path.GetFullPath(schemaFileName)} ";
+            }
+            message = $"{message}\nTotal Time (seconds):{roundedTime}";
+            Success(message);
+       
         }
 
         private static void WriteContentToFile(string output, string file)
@@ -85,7 +99,7 @@ namespace jsoncsharp
             File.WriteAllText(output, file);
         }
 
-        private static async Task<string> GenerateFileContentFromSchema(string input, string @namespace)
+        private static async Task<(string csharpfile,string jsonschema)> GenerateFileContentFromSchema(string input, string @namespace)
         {
             var json = File.ReadAllText(input);
             JsonSchema schema;
@@ -96,6 +110,7 @@ namespace jsoncsharp
             else
             {
                 schema = JsonSchema.FromSampleJson(json);
+                
             }
             var generator = new CSharpGenerator(schema, new CSharpGeneratorSettings
             {
@@ -103,7 +118,7 @@ namespace jsoncsharp
                 GenerateDataAnnotations = false
             });
             var file = generator.GenerateFile();
-            return file;
+            return (file, schema.ToJson());
         }
 
         private static string VerifyOutputFile(string output, bool force, bool verbose, string input)
