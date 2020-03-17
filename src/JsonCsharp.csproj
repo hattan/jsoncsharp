@@ -12,6 +12,8 @@
     <Authors>Hattan Shobokshi</Authors>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Description>A command line tool to genreate C# classes from json files. These can be example json documents or json schema.</Description>
+    <IconUrl>https://i.imgur.com/tiUFxKq.png</IconUrl>
+    <PackageIconUrl >https://i.imgur.com/tiUFxKq.png</PackageIconUrl >
   </PropertyGroup>
 
   <ItemGroup>
