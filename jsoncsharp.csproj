@@ -1,0 +1,23 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <Version>1.0.0.4</Version>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <RootNamespace>jsoncsharp</RootNamespace>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>jsoncsharp</ToolCommandName>
+    <PackageOutputPath>./nupkg</PackageOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="NJsonSchema" Version="10.1.8" />
+    <PackageReference Include="NJsonSchema.CodeGeneration.CSharp" Version="10.1.8" />
+    <PackageReference Include="System.CommandLine.DragonFruit" Version="0.3.0-alpha.20158.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="nupkg\" />
+  </ItemGroup>
+
+</Project>
