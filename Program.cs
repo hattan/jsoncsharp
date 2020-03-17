@@ -51,7 +51,7 @@ namespace jsoncsharp
         /// <param name="force">Ignore checking for existence of output file.</param>
         /// <param name="verbose">Show verbose logs.</param>
         static async Task Main(
-            string input=null, 
+            string input= null, 
             string output=null,
             string @namespace="DefaultNameSpace",
             bool force = false,
@@ -87,7 +87,16 @@ namespace jsoncsharp
 
         private static async Task<string> GenerateFileContentFromSchema(string input, string @namespace)
         {
-            var schema = await JsonSchema.FromFileAsync(input);
+            var json = File.ReadAllText(input);
+            JsonSchema schema;
+            if (json.Contains("$schema"))
+            {
+                schema = await JsonSchema.FromFileAsync(input);
+            }
+            else
+            {
+                schema = JsonSchema.FromSampleJson(json);
+            }
             var generator = new CSharpGenerator(schema, new CSharpGeneratorSettings
             {
                 Namespace = @namespace,
